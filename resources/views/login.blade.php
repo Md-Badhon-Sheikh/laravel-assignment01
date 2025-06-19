@@ -33,7 +33,7 @@
         <div class="w-full max-w-sm p-8 bg-white rounded-xl shadow-md">
             <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Login to Your Account</h2>
 
-            <form action="" method="POST" class="space-y-5">
+            <form action="{{route('loginMatch')}}" method="POST" class="space-y-5">
                 @csrf
 
                 <!-- Email -->
@@ -71,6 +71,19 @@
                 <a href="/register" class="text-blue-600 hover:underline">Register</a>
             </p>
         </div>
+
+
+        @if ($errors->any())
+        <div class="card-footer text-body-secondary">
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+        @endif
 
     </body>
 

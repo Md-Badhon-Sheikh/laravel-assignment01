@@ -1,23 +1,12 @@
 <?php
 
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\UserController;
 use App\Models\Staff;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home',  ['posts' => Staff::all()]);
-});
-
-Route::get('/admin', function () {
-    return view('admin');
-});
-
-Route::get('/login', function () {
-    return view('pages.login');
-});
-
-Route::get('/register', function () {
-    return view('pages.register');
 });
 
 Route::get('/staff-list', function () {
@@ -35,3 +24,18 @@ Route::post('/update/{id}', [StaffController::class, 'updateData'])-> name('upda
 
 Route::get('/delete/{id}', [StaffController::class, 'deleteData'])-> name('delete');
 
+
+// Authentication 
+
+Route::view('register', 'register')->name('register');
+
+Route::post('registerSave', [UserController::class, 'register'])->name('registerSave');
+
+
+Route::view('login', 'login')->name('login');
+
+Route::post('loginMatch', [UserController::class, 'login'])->name('loginMatch');
+
+Route::get('admin', [UserController::class, 'adminPage'])->name('admin');
+
+Route::get('logout', [UserController::class, 'logout'])->name('logout');

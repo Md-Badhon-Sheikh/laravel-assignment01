@@ -13,7 +13,7 @@
                 <img src="assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="/all-staff" class="d-block">Alexander Pierce</a>
+                <a href="/all-staff" class="d-block">{{Auth::user()->name}}</a>
             </div>
         </div>
 
