@@ -43,7 +43,7 @@
             </ul>
         </div>
         <div class="navbar-end">
-            <a class="btn">Button</a>
+            <a class="mx-12">login</a>
         </div>
     </div>
 </body>

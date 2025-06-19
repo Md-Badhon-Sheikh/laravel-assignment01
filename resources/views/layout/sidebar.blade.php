@@ -50,7 +50,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/allStaff" class="nav-link">
+                            <a href="/staff-list" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Staff List</p>
                             </a>
