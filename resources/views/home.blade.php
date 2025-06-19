@@ -37,15 +37,47 @@
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
                 <li><a>Home</a></li>
-               
+
                 <li><a>About</a></li>
                 <li><a>Contact</a></li>
             </ul>
         </div>
         <div class="navbar-end">
-            <a class="mx-12">login</a>
+            <a href="login" class="mx-12 bg-green-700 px-4 py-1 rounded font-semibold text-white">login</a>
         </div>
     </div>
+
+
+ <!-- Table -->
+<div class="overflow-x-auto mt-5 mx-5 rounded-lg border border-gray-200 bg-white shadow">
+    <table class="min-w-full divide-y divide-gray-200 text-center">
+        <thead class="bg-gray-100">
+            <tr>
+                <th class="px-6 py-3 text-sm font-semibold text-gray-700 uppercase">Id</th>
+                <th class="px-6 py-3 text-sm font-semibold text-gray-700 uppercase">Name</th>
+                <th class="px-6 py-3 text-sm font-semibold text-gray-700 uppercase">Position</th>
+                <th class="px-6 py-3 text-sm font-semibold text-gray-700 uppercase">Email</th>
+                <th class="px-6 py-3 text-sm font-semibold text-gray-700 uppercase">Image</th>
+                <th class="px-6 py-3 text-sm font-semibold text-gray-700 uppercase">Phone</th>
+            </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+            @foreach($posts as $key => $post)
+            <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 text-sm text-gray-700 font-medium">{{ $key + 1 }}</td>
+                <td class="px-6 py-4 text-sm text-gray-700">{{ $post->name }}</td>
+                <td class="px-6 py-4 text-sm text-gray-700">{{ $post->position }}</td>
+                <td class="px-6 py-4 text-sm text-gray-700">{{ $post->email }}</td>
+                <td class="px-6 py-4">
+                    <img src="{{ asset('images/'.$post->image) }}" alt="Photo" class="w-12 h-12 rounded-full mx-auto object-cover">
+                </td>
+                <td class="px-6 py-4 text-sm text-gray-700">{{ $post->phone }}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+
 </body>
 
 </html>

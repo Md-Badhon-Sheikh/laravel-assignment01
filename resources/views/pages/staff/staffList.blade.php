@@ -34,7 +34,7 @@
                      <!-- You can add Edit/Delete buttons here -->
                      <div class="d-flex gap-2 justify-content-center">
                          <!-- Example -->
-                         <a href="{{route('edit', $post->id)}}" class="btn btn-sm btn-primary">Edit</a>
+                         <a href="{{route('edit', $post->id)}}" class="btn btn-sm btn-primary mx-2">Edit</a>
                         <a href="{{route('delete', $post->id)}}" class="btn btn-sm btn-danger">Delete</a>
                      </div>
                  </td>

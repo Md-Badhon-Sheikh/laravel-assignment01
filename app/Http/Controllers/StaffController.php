@@ -86,4 +86,13 @@ class StaffController extends Controller
         return redirect()->route('staff-list');
 
     }
+
+
+    // delete 
+
+    public function deleteData($id){
+        $post = Staff:: findOrFail($id);
+        $post -> delete();
+        return redirect()-> route('staff-list');
+    }
 }
